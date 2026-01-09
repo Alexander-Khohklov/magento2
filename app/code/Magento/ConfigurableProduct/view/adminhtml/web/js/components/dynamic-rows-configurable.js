@@ -207,9 +207,7 @@ define([
                 attributeCodes = this.source.get('data.attribute_codes');
 
             this.isEmpty(data.length === 0);
-            this.isShowAddProductButton(
-                (!attributeCodes || data.length > 0 ? data.length : attributeCodes.length) >= 0
-            );
+            this.isShowAddProductButton(attributeCodes || data.length > 0);
 
             tmpData = data.slice(this.pageSize * (this.currentPage() - 1),
                 this.pageSize * (this.currentPage() - 1) + parseInt(this.pageSize, 10));
